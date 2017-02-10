@@ -1,0 +1,8 @@
+{
+  "name": "soundcloud-batch-downloader",
+  "version": "1.0.0",
+  "description": "Soundcloud batch downloader from your recent reposts",
+  "author": "Chris Ng",
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -1,0 +1,16 @@
+{
+  "name": "soundcloud-batch-downloader-server",
+  "version": "1.0.0",
+  "description": "Node/Express server for the Soundcloud Batch Downloader",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Chris Ng",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "path": "^0.12.7"
+  }
+}
