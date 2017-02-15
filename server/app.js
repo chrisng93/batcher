@@ -5,8 +5,11 @@ const env = require('dotenv');
 // Load env variables
 env.config({ path: './.env' });
 
-// Initial config static assets
+// Initial config
 require('./config/initialize.js')(app, express);
+
+// Set up db
+require('./db/db.js');
 
 // Set up routes
 require('./routes/routes.js')(app);

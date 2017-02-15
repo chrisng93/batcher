@@ -1,3 +1,7 @@
+const userRouter = require('./user/index.js');
+const songRouter = require('./song/index.js');
+
 module.exports = (app) => {
-  // Routes go here
-};
+  app.use('/api/user', userRouter);
+  app.use('/api/song', songRouter);
+}
