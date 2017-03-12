@@ -14,18 +14,18 @@ const testEnv = {
 
 const download = (url, dest) => {
   const file = fs.createWriteStream(dest);
-  const request = http.get(url, (response) => {
+  http.get(url, (response) => {
     response.pipe(file);
     file.on('finish', () => {
       file.close();
     }).on('error', (err) => {
       fs.unlink(dest);
-      console.error(`Error downloading file: ${err}`)
+      console.error(`Error downloading file: ${err}`);
     });
   });
 };
 
-exec(`casperjs testScript.js --converterUrl="${testEnv.converterUrl}" --url="${testEnv.url}" --artist="${testEnv.artist}" --song="${testEnv.song}"`, (err, stdout, stderr) => {
+exec(`casperjs scripts/testScript.js --converterUrl="${testEnv.converterUrl}" --url="${testEnv.url}" --artist="${testEnv.artist}" --song="${testEnv.song}"`, (err, stdout, stderr) => {
   if (err) {
     console.error(`Exec error: ${err}`);
     return;
