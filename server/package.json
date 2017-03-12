@@ -4,28 +4,27 @@
   "description": "Node/Express server for the Soundcloud Batch Downloader",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js",
-    "postinstall": "cd node_modules/spooky && npm install"
+    "dev": "nodemon app.js"
   },
   "author": "Chris Ng",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "bookshelf": "^0.10.3",
+    "casperjs": "^1.1.3",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "knex": "^0.12.6",
+    "mysql": "^2.13.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
     "babel-eslint": "^7.1.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-register": "^6.23.0",
-    "body-parser": "^1.15.2",
-    "bookshelf": "^0.10.3",
-    "dotenv": "^2.0.0",
-    "express": "^4.14.0",
-    "knex": "^0.12.6",
-    "mysql": "^2.13.0",
-    "path": "^0.12.7",
-    "phantom": "^4.0.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.23.0"
+    "babel-register": "^6.23.0"
   }
 }

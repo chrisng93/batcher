@@ -7,8 +7,8 @@ import SC from 'soundcloud';
 
 import configureStore from './store/configureStore';
 import App from './components/App';
-import SignIn from './components/SignIn/index';
-import Auth from './components/Auth/index';
+import SignIn from './components/SignIn';
+import Auth from './components/Auth';
 
 SC.initialize({ client_id: process.env.SC_CLIENT_ID, redirect_uri: process.env.SC_REDIRECT_URI });
 
