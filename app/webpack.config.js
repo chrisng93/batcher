@@ -1,50 +1,57 @@
-"use strict";
 const webpack = require('webpack');
 const path = require('path');
 const loaders = require('./webpack.loaders');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const config = require('./src/constants/config.js');
 
-const HOST = process.env.HOST || "0.0.0.0";
-const PORT = process.env.PORT || "8888";
+let HOST;
+config.HOST === 'http://localhost' ? HOST = '0.0.0.0' : HOST = config.HOST;
+const PORT = config.PORT || '8000';
 
 module.exports = {
   entry: [
     `webpack-dev-server/client?http://${HOST}:${PORT}`,
-    `./src/index.jsx`
+    './src/index.jsx',
   ],
   devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
   },
   module: {
-    loaders
+    loaders,
   },
   devServer: {
-    contentBase: "./public",
-    noInfo: true,
-    inline: true,
+    contentBase: './public',
+    host: HOST,
     port: PORT,
-    host: HOST
+    inline: true,
+    noInfo: true,
+    historyApiFallback: true,
   },
   eslint: {
-    configFile: './.eslintrc'
+    configFile: './.eslintrc',
   },
   plugins: [
     new webpack.NoErrorsPlugin(),
     new CopyWebpackPlugin([
-      {from: './index.html'}
+      { from: './index.html' },
     ]),
+    new webpack.ProvidePlugin({
+      fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch',
+    }),
     new webpack.DefinePlugin({
       'process.env': {
-        HOST: JSON.stringify('http://localhost'),
-        PORT: JSON.stringify('8888'),
-        API_URL: JSON.stringify('http://localhost:8000'),
-        SC_CLIENT_ID: JSON.stringify('test')
-      }
-    })
-  ]
+        HOST: JSON.stringify(config.HOST),
+        PORT: JSON.stringify(config.PORT),
+        API_URL: JSON.stringify(config.API_URL),
+        SC_CLIENT_ID: JSON.stringify(config.SC_CLIENT_ID),
+        SC_CLIENT_SECRET: JSON.stringify(config.SC_CLIENT_SECRET),
+        SC_REDIRECT_URI: JSON.stringify(config.SC_REDIRECT_URI),
+      },
+    }),
+  ],
 };

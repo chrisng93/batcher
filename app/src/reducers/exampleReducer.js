@@ -1,11 +1,13 @@
 import * as actionTypes from '../constants/actionTypes.js';
+// import {} from 'immutable';
 
-export default function(state, action) {
+const initialState = [];
+
+export default function(state = initialState, action) {
   switch(action.type) {
     // Set up reducers for each case
     // case actionTypes.case:
     //   return newState;
-    // default:
-    //   return state;
   }
+  return state;
 }

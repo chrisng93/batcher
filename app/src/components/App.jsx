@@ -1,16 +1,13 @@
-import React from 'react';
-import SignIn from './SignIn';
+import React, { PropTypes as T } from 'react';
 
-export default class App extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
-	render() {
-		return (
-			<div id="app">
-				<SignIn />
-			</div>
-		);
-	}
+export default function App({ children }) {
+  return (
+    <div id="app">
+      {children}
+    </div>
+  );
 }
+
+App.propTypes = {
+  children: T.node,
+};
