@@ -7,21 +7,24 @@ async function convertUrlToMp3(audioUrl, artist, song) {
   const instance = await phantom.create();
   const page = await instance.createPage();
   const status = await page.open(process.env.CONVERTER_URL);
-  console.log(status);
-  const content = await page.property('content');
-  console.log(content);
+
+  if (status !== 'success') {
+    return;
+  }
+
+  const result = await page.evaluate(function(audioUrl, artist, song, click) {
+    document.querySelector('.input_convert').value = audioUrl;
+    return click(document.querySelector('#convertForm fieldset .mainbtn'));
+  }, audioUrl, artist, song, click);
+  console.log(result)
+
   await instance.exit();
 }
 
-// const convertUrlToMp3 = (audioUrl, artist, song) => {
-  // console.log('starting script')
-  // spooky.start(process.env.CONVERTER_URL);
-  // spooky.then(function() {
-  //   console.log('clicking on buttons')
-  //   this.sendKeys('input.input_convert', audioUrl);
-  //   this.click('.mainbtn button[type="submit"]');
-  //   console.log(this.getCurrentUrl())
-  // });
-// };
+function click(el){
+  const ev = document.createEvent('MouseEvent');
+  ev.initMouseEvent('click', true, true , window, null, 0, 0, 0, 0, false, false, false, false, 0, null);
+  el.dispatchEvent(ev);
+}
 
-convertUrlToMp3('https://soundcloud.com/archive_1/youll-be-okay?in=imyetep/sets/my-feels');
+convertUrlToMp3('https://soundcloud.com/archive_1/youll-be-okay?in=imyetep/sets/my-feels', 'yetep', 'youll be okay');

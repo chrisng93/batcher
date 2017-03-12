@@ -5,11 +5,10 @@ const app = express();
 
 require('babel-register');
 
-// test casper script
-require('./scripts/converterScript');
-
 // Load env variables
 env.config({ path: './.env' });
+
+require('./callCasper.js');
 
 // Initial config
 require('./config/initialize.js')(app, express);
