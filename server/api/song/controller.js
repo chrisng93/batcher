@@ -6,14 +6,13 @@ const retrieveTracks = (req, res) => {
   res.send('retrieve');
 };
 
-const downloadSongs = (req, res) => {
-  console.log('received request', req.body)
+async function downloadSongs(req, res) {
   for (let i = 0; i < req.body.songs.length; i++) {
     const curr = req.body.songs[i];
-    convertSong(curr.permalink_url, curr.artist, curr.title);
+    await convertSong(curr.permalink_url, curr.artist, curr.title);
   }
   res.send('post dl');
-};
+}
 
 const getDownloads = (req, res) => {
   res.send('get dl');

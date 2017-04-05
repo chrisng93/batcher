@@ -1,9 +1,8 @@
+require('babel-register');
 const express = require('express');
 const env = require('dotenv');
 
 const app = express();
-
-require('babel-register');
 
 // Load env variables
 env.config({ path: './.env' });
@@ -11,13 +10,13 @@ env.config({ path: './.env' });
 require('./callCasper.js');
 
 // Initial config
-require('./config/initialize.js')(app, express);
+require('./config/initialize.js')(app);
 
 // Set up db
 require('./db/db.js');
 
-// Set up routes
-require('./routes/routes.js')(app);
+// Set up api
+require('./api/routes.js')(app);
 app.get('/*', (req, res) => {
   res.status(404).send('Route not found');
 });
