@@ -44,7 +44,7 @@ export default class Downloads extends Component {
         {favoritesState.map((song, key) => {
           return (
             <div key={key} className="downloads-song">
-              <div className="downloads-song-url">{song.permalink_url}</div>
+              <a className="downloads-song-url" href={song.permalink_url} target="_blank">{song.permalink_url}</a>
               <input className="downloads-song-artist" placeholder="artist" value={song.artist ? song.artist : ''} onChange={(e) => this.onChangeValue(key, e.target.value, 'artist')} />
               <input className="downloads-song-title" placeholder="title" value={song.title} onChange={(e) => this.onChangeValue(key, e.target.value, 'title')} />
             </div>
