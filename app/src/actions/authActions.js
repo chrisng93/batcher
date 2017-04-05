@@ -39,8 +39,6 @@ export default function auth() {
         dispatch(push('/downloads'));
         return dispatch(authSuccess({ user: data, oauthToken }));
       })
-      .catch((error) => {
-        return dispatch(authFailure({ error }));
-      });
+      .catch((error) => dispatch(authFailure({ error })));
   };
 }

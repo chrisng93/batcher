@@ -12,6 +12,10 @@ module.exports = [
     loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
   },
   {
+    test: /\.css$/,
+    loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+  },
+  {
     test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
     loader: "file",
   },

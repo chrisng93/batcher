@@ -1,8 +1,11 @@
+/**
+ * Created by chrisng on 4/5/17.
+ */
 import * as actionTypes from '../constants/actionTypes.js';
 
 const initialState = {
   user: {},
-  oauthToken: '',
+  scToken: '',
   isFetching: false,
   error: {},
 };
@@ -16,7 +19,7 @@ export default function auth(state = initialState, action) {
       return {
         ...state,
         user: payload.user,
-        oauthToken: payload.oauthToken,
+        scToken: payload.oauthToken,
         isFetching: false,
         error: {},
       };
@@ -24,7 +27,7 @@ export default function auth(state = initialState, action) {
       return {
         ...state,
         user: {},
-        oauthToken: '',
+        scToken: '',
         isFetching: false,
         error: payload.error.error_description,
       };

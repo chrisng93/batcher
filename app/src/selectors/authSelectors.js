@@ -5,22 +5,22 @@ import { createSelector } from 'reselect';
 
 const authStateSelector = state => state.auth;
 
-const oauthTokenSelector = createSelector(
+export const scTokenSelector = createSelector(
   authStateSelector,
-  authState => authState.oauthToken
+  authState => authState.scToken
 );
 
-const userSelector = createSelector(
+export const userSelector = createSelector(
   authStateSelector,
   authState => authState.user
 );
 
-const isFetchingAuthSelector = createSelector(
+export const isFetchingAuthSelector = createSelector(
   authStateSelector,
   authState => authState.isFetching
 );
 
-const authErrorSelector = createSelector(
+export const authErrorSelector = createSelector(
   authStateSelector,
   authState => authState.error
 );

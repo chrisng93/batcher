@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { persistStore } from 'redux-persist';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import SC from 'soundcloud';
@@ -15,6 +16,9 @@ SC.initialize({ client_id: process.env.SC_CLIENT_ID, redirect_uri: process.env.S
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
+
+// import stylesheets
+require ('./stylesheets/app.scss');
 
 ReactDOM.render(
   <Provider store={store}>
