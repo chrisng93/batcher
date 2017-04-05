@@ -6,12 +6,12 @@ const config = require('./src/constants/config.js');
 
 let HOST;
 config.HOST === 'http://localhost' ? HOST = '0.0.0.0' : HOST = config.HOST;
-const PORT = config.PORT || '8000';
+const PORT = config.PORT || '8888';
 
 module.exports = {
   entry: [
     `webpack-dev-server/client?http://${HOST}:${PORT}`,
-    './src/presenter.jsx',
+    './src/index.jsx',
   ],
   devtool: 'source-map',
   output: {
@@ -48,6 +48,7 @@ module.exports = {
         HOST: JSON.stringify(config.HOST),
         PORT: JSON.stringify(config.PORT),
         API_URL: JSON.stringify(config.API_URL),
+        SC_API_URL: JSON.stringify(config.SC_API_URL),
         SC_CLIENT_ID: JSON.stringify(config.SC_CLIENT_ID),
         SC_CLIENT_SECRET: JSON.stringify(config.SC_CLIENT_SECRET),
         SC_REDIRECT_URI: JSON.stringify(config.SC_REDIRECT_URI),

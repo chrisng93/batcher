@@ -1,5 +1,9 @@
 import React, { PropTypes as T } from 'react';
 
+const propTypes = {
+  children: T.node,
+};
+
 export default function App({ children }) {
   return (
     <div id="app">
@@ -8,6 +12,4 @@ export default function App({ children }) {
   );
 }
 
-App.propTypes = {
-  children: T.node,
-};
+App.propTypes = propTypes;

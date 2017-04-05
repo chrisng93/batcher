@@ -7,8 +7,9 @@ import SC from 'soundcloud';
 
 import configureStore from './store/configureStore';
 import App from './components/App';
-import SignIn from './components/SignIn';
 import Auth from './components/Auth';
+import SignInContainer from './containers/SignInContainer';
+import DownloadsContainer from './containers/DownloadsContainer';
 
 SC.initialize({ client_id: process.env.SC_CLIENT_ID, redirect_uri: process.env.SC_REDIRECT_URI });
 
@@ -19,9 +20,10 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <IndexRoute component={SignIn} />
-        <Route path="/" component={SignIn} />
+        <IndexRoute component={SignInContainer} />
+        <Route path="/" component={SignInContainer} />
         <Route path="/auth" component={Auth} />
+        <Route path="/downloads" component={DownloadsContainer} />
       </Route>
     </Router>
   </Provider>,

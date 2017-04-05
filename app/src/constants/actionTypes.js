@@ -1,4 +1,6 @@
 module.exports = {
-  // Map constants for your actions here
-  // EXAMPLE: 'EXAMPLE'
+  // auth
+  AUTH_FETCHING: 'AUTH_FETCHING',
+  AUTH_SUCCESS: 'AUTH_SUCCESS',
+  AUTH_FAILURE: 'AUTH_FAILURE',
 };

@@ -1,4 +1,4 @@
-import auth from './auth';
+import auth from './authActions';
 
 module.exports = {
   auth,

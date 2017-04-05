@@ -8,8 +8,8 @@ module.exports = [
     },
   },
   {
-    test: /\.css$/,
-    loader: 'style-loader!css-loader',
+    test: /\.scss$/,
+    loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
   },
   {
     test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
