@@ -1,0 +1,22 @@
+.signin {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  .signin-connect {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    background-color: #000000;
+
+    .signin-connect-sc-container {
+      height: 100%;
+      margin-left: auto;
+
+      .signin-connect-sc {
+        height: 100%;
+      }
+    }
+  }
+}

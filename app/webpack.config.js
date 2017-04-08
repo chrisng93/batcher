@@ -4,8 +4,7 @@ const loaders = require('./webpack.loaders');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const config = require('./src/constants/config.js');
 
-let HOST;
-config.HOST === 'http://localhost' ? HOST = '0.0.0.0' : HOST = config.HOST;
+const HOST = config.HOST === 'http://localhost' ? '0.0.0.0' : config.HOST;
 const PORT = config.PORT || '8888';
 
 module.exports = {
