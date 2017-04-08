@@ -1,21 +1,12 @@
-const User = require('../../models/UserModel');
-const Track = require('../../models/TrackModel');
-import convertSong from '../../callCasper';
-
-const retrieveTracks = (req, res) => {
-  res.send('retrieve');
-};
+import convertSong from '../../scripts/manageDownload';
 
 async function downloadSongs(req, res) {
   for (let i = 0; i < req.body.songs.length; i++) {
     const curr = req.body.songs[i];
-    await convertSong(curr.permalink_url, curr.artist, curr.title);
+    const file = await convertSong(curr.permalink_url, curr.artist, curr.title);
+    console.log(file)
   }
   res.send('post dl');
 }
 
-const getDownloads = (req, res) => {
-  res.send('get dl');
-};
-
-module.exports = { retrieveTracks, downloadSongs, getDownloads };
+module.exports = { downloadSongs };

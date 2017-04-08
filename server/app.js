@@ -7,13 +7,10 @@ const app = express();
 // Load env variables
 env.config({ path: './.env' });
 
-require('./callCasper.js');
+require('./scripts/manageDownload.js');
 
 // Initial config
 require('./config/initialize.js')(app);
-
-// Set up db
-require('./db/db.js');
 
 // Set up api
 require('./api/routes.js')(app);

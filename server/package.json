@@ -10,12 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "bookshelf": "^0.10.3",
     "casperjs": "^1.1.3",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
-    "knex": "^0.12.6",
-    "mysql": "^2.13.0",
     "path": "^0.12.7"
   },
   "devDependencies": {

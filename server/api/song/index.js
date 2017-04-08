@@ -1,9 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const songController = require('./controller.js');
+import express from 'express';
+import songController from './controller';
 
-router.post('/retrieve', (req, res) => songController.retrieveTracks(req, res));
-router.post('/download', (req, res) => songController.downloadSongs(req, res));
-router.get('/download', (req, res) => songController.getDownloads(req, res));
+const songRouter = express.Router();
 
-module.exports = router;
+songRouter.post('/download', (req, res) => songController.downloadSongs(req, res));
+
+module.exports = songRouter;
