@@ -7,7 +7,7 @@ const app = express();
 // Load env variables
 env.config({ path: './.env' });
 
-require('./scripts/manageDownload.js');
+require('./manageDownload.js');
 
 // Initial config
 require('./config/initialize.js')(app);

@@ -17,8 +17,8 @@ const download = (dlUrl, originalUrl, artist, song, resolve) => {
   http.get(dlUrl, (response) => {
     response.pipe(file);
     file.on('finish', () => {
-      resolve(file);
       file.close();
+      resolve(file);
     }).on('error', (err) => {
       fs.unlink(dest);
       console.error(`Error downloading file: ${err}`);
@@ -30,7 +30,7 @@ export default async function convertSong(url, artist, song) {
   return new Promise((resolve, reject) => {
     console.log('converting song', converterUrl, url, artist, song);
 
-    exec(`casperjs scripts/testScript.js --converterUrl="${converterUrl}" --url="${url}" --artist="${artist}" --song="${song}"`, (err, stdout, stderr) => {
+    exec(`casperjs scripts/downloadScript.js --converterUrl="${converterUrl}" --url="${url}" --artist="${artist}" --song="${song}"`, (err, stdout, stderr) => {
       if (err) {
         console.error(`Exec error: ${err}`);
         return;

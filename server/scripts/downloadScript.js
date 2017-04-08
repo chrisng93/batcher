@@ -3,10 +3,10 @@
  */
 const casper = require('casper').create();
 
-const converterUrl = casper.cli.raw.get('converterUrl');
-const url = casper.cli.raw.get('url');
-const artist = casper.cli.raw.get('artist');
-const song = casper.cli.raw.get('song');
+var converterUrl = casper.cli.raw.get('converterUrl');
+var url = casper.cli.raw.get('url');
+var artist = casper.cli.raw.get('artist');
+var song = casper.cli.raw.get('song');
 
 casper.start(converterUrl);
 
