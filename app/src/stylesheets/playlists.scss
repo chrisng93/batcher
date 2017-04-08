@@ -1,0 +1,22 @@
+.playlists {
+  margin: 60px;
+  overflow: hidden;
+
+  .playlists-title {
+    margin-bottom: 16px;
+    font-size: 48px;
+    letter-spacing: 1px;
+    color: #f5f5f5;
+  }
+
+  .playlists-playlist {
+    margin-bottom: 12px;
+    font-size: 24px;
+    color: #f5f5f5;
+
+    span:hover {
+      color: #b0b0b0;
+      cursor: pointer;
+    }
+  }
+}

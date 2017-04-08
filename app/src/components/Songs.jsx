@@ -43,6 +43,10 @@ export default class Songs extends Component {
     const { isDownloading, downloadSuccess, downloadError } = this.props;
     return (
       <div className="songs">
+        <img className="bg" src={require('../../assets/songs.jpg')} />
+        <div className="songs-title">
+          Songs
+        </div>
         {songsState.map((song, key) =>
           <div key={key} className="songs-song">
             <a
@@ -53,18 +57,20 @@ export default class Songs extends Component {
             >
               {song.permalink_url}
             </a>
-            <input
-              className="songs-song-artist"
-              placeholder="artist"
-              value={song.artist ? song.artist : ''}
-              onChange={e => this.onChangeValue(key, e.target.value, 'artist')}
-            />
-            <input
-              className="songs-song-title"
-              placeholder="title"
-              value={song.title}
-              onChange={e => this.onChangeValue(key, e.target.value, 'title')}
-            />
+            <div className="songs-song-info">
+              <input
+                className="songs-song-info-artist"
+                placeholder="artist"
+                value={song.artist ? song.artist : ''}
+                onChange={e => this.onChangeValue(key, e.target.value, 'artist')}
+              />
+              <input
+                className="songs-song-info-title"
+                placeholder="title"
+                value={song.title}
+                onChange={e => this.onChangeValue(key, e.target.value, 'title')}
+              />
+            </div>
           </div>
         )}
         <input className="songs-download" type="button" value="Download" onClick={this.onDownload} />

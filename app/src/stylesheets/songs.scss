@@ -1,0 +1,81 @@
+.songs {
+  margin: 60px;
+
+  .bg {
+    top: -10%;
+  }
+
+  .songs-title {
+    margin-bottom: 16px;
+    font-size: 48px;
+    letter-spacing: 1px;
+    color: #f5f5f5;
+  }
+
+  .songs-song {
+    height: 70px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #b0b0b0;
+    opacity: 0.96;
+
+    .songs-song-url {
+      flex: 1;
+      color: #2c2c2c;
+    }
+
+    .songs-song-url:hover {
+      color: #5f5f5f;
+      cursor: pointer;
+    }
+
+    .songs-song-info {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+
+      .songs-song-info-artist {
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .songs-song-info-title {
+        flex: 1;
+        margin-left: 10px;
+      }
+
+      input {
+        border: none;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .songs-download {
+    height: 80px;
+    width: 160px;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 24px;
+    color: #2c2c2c;
+    font-weight: 500;
+    background-color: #b0b0b0;
+    opacity: 0.96;
+  }
+
+  .songs-downloading {
+    color: #f5f5f5;
+  }
+
+  .songs-download-success {
+    color: #f5f5f5;
+  }
+
+  .songs-download-error {
+    color: #f5f5f5;
+  }
+}

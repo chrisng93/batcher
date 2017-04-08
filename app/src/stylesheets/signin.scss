@@ -2,17 +2,19 @@
   width: 100%;
   height: 100%;
   display: flex;
+  overflow: hidden;
 
   .signin-connect {
     width: 100%;
-    height: 30px;
+    height: 50px;
     display: flex;
     flex-direction: row;
-    background-color: #000000;
 
     .signin-connect-sc-container {
       height: 100%;
       margin-left: auto;
+      margin-top: 15px;
+      margin-right: 15px;
 
       .signin-connect-sc {
         height: 100%;
