@@ -8,7 +8,7 @@ import * as actionTypes from '../constants/actionTypes';
 function authFetching() {
   return {
     type: actionTypes.AUTH_FETCHING,
-  }
+  };
 }
 
 function authSuccess(payload) {
@@ -30,15 +30,15 @@ export default function auth() {
   return (dispatch) => {
     dispatch(authFetching());
     SC.connect()
-      .then(session => {
+      .then((session) => {
         oauthToken = session.oauth_token;
         return fetch(`${process.env.SC_API_URL}/me?oauth_token=${session.oauth_token}`);
       })
       .then(response => response.json())
       .then((data) => {
-        dispatch(push('/downloads'));
+        dispatch(push('/playlists'));
         return dispatch(authSuccess({ user: data, oauthToken }));
       })
-      .catch((error) => dispatch(authFailure({ error })));
+      .catch(error => dispatch(authFailure({ error })));
   };
 }

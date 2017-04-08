@@ -1,8 +1,10 @@
 import auth from './authActions';
-import { getFavorites, downloadFavorites } from './downloadActions';
+import { getSongs, downloadSongs } from './songsActions';
+import getPlaylists from './playlistsActions';
 
 module.exports = {
   auth,
-  getFavorites,
-  downloadFavorites,
+  getPlaylists,
+  getSongs,
+  downloadSongs,
 };

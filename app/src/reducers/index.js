@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import auth from './authReducer';
-import downloads from './downloadsReducer';
+import playlists from './playlistsReducer';
+import songs from './songsReducer';
 
 export default combineReducers({
   auth,
-  downloads,
+  playlists,
+  songs,
   routing: routerReducer,
 });
