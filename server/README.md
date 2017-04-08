@@ -1,4 +1,4 @@
-# Batcher Frontend
+# Batcher Backend
 
 
 ## Table of Contents
@@ -12,7 +12,7 @@
 
 #### 1. Install dependencies
 
-  From within the app directory run the following command to install all dependencies:
+  From within the server directory run the following command to install all dependencies:
 
   ```sh
   $ npm install
@@ -20,7 +20,7 @@
 
 #### 2. Run the application
 
-  1. Within the app/src/constants directory, use create a config.js file using the config.example.js file as a guide. Note: You will need to sign up for a Soundcloud app for the keys.
+  1. Within the server directory, use create a .env file using the .env.example file as a guide
 
   2. In a new terminal window run the following command to start the application:
 

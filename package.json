@@ -1,5 +1,5 @@
 {
-  "name": "soundcloud-batch-downloader",
+  "name": "batcher",
   "version": "1.0.0",
   "description": "Soundcloud batch downloader from your recent reposts",
   "author": "Chris Ng",

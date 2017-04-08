@@ -1,5 +1,5 @@
 {
-  "name": "soundcloud-batch-downloader-server",
+  "name": "batcher-server",
   "version": "1.0.0",
   "description": "Node/Express server for the Soundcloud Batch Downloader",
   "scripts": {
