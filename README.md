@@ -1,6 +1,6 @@
 # Batcher
 
-Soundcloud batch downloader
+Soundcloud batch song downloader
 
 ## Table of Contents
 
