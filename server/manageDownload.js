@@ -10,6 +10,7 @@ const converterUrl = process.env.CONVERTER_URL;
 const download = (dlUrl, originalUrl, artist, song, resolve) => {
   console.log('downloading', dlUrl, originalUrl, artist, song);
   if (dlUrl.slice(0, 4) === 'null') {
+    console.log(converterUrl)
     convertSong(originalUrl, artist, song);
     return;
   }
