@@ -7,7 +7,7 @@ import fs from 'fs';
 
 const converterUrl = process.env.CONVERTER_URL;
 
-const download = (dlUrl, originalUrl, artist, song, resolve) => {
+const download = (dlUrl, originalUrl, artist, song, resolve, convertSong) => {
   console.log('downloading', dlUrl, originalUrl, artist, song);
   if (dlUrl.slice(0, 4) === 'null') {
     console.log(converterUrl)
@@ -36,7 +36,7 @@ export default async function convertSong(url, artist, song) {
         console.error(`Exec error: ${err}`);
         return;
       }
-      download(stdout, url, artist, song, resolve);
+      download(stdout, url, artist, song, resolve, convertSong);
     });
   });
 }
